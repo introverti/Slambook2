@@ -1,6 +1,0 @@
-/home/xavier/slambook2/ch5/build/CMakeFiles/rebuild_cache.dir
-/home/xavier/slambook2/ch5/build/CMakeFiles/edit_cache.dir
-/home/xavier/slambook2/ch5/build/imageBasics/CMakeFiles/rebuild_cache.dir
-/home/xavier/slambook2/ch5/build/imageBasics/CMakeFiles/edit_cache.dir
-/home/xavier/slambook2/ch5/build/imageBasics/CMakeFiles/undistortImage.dir
-/home/xavier/slambook2/ch5/build/imageBasics/CMakeFiles/imageBasics.dir
