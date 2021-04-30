@@ -24,12 +24,35 @@ int main(int argc, char **argv) {
     double b = 0.573;
 
     // 读取图像
+    // flag=-1,8位深度，原通道
+    // 0，8位深度，单通道，即灰度图
+    // 1，8位深度，三通道RGB
+　　// 2, 原深度，单通道
+　　// 4, 原深度，三通道
     cv::Mat left = cv::imread(left_file, 0);
     cv::Mat right = cv::imread(right_file, 0);
+
+    //Semi-Global Batch Matching
+    //static Ptr< StereoSGBM > 	create (
+    //int minDisparity=0,最小差值，一般为0
+    //int numDisparities=16, 最大差值和最小差值的差值，必须是16的倍数
+    //int blockSize=3, 对比窗格大小，大于1的奇数
+    //int P1=0, 8*number_of_image_channels*blockSize*blockSize
+    //int P2=0, 32*number_of_image_channels*blockSize*blockSize
+    //int disp12MaxDiff=0, 最多允许一个对比窗格内几个像素格有误差
+    //int preFilterCap=0, 第一步滤波，将pixel的值约束在[-preFilterCap,preFilterCap]区间中
+    //int uniquenessRatio=0, 百分比误差收敛条件
+    //int speckleWindowSize=0, 噪音影响区间
+    //int speckleRange=0, 最大差值变化，会自己乘以16系数
+    //int mode=StereoSGBM::MODE_SGBM)
+ 	Creates StereoSGBM object.
     cv::Ptr<cv::StereoSGBM> sgbm = cv::StereoSGBM::create(
         0, 96, 9, 8 * 9 * 9, 32 * 9 * 9, 1, 63, 10, 100, 32);    // 神奇的参数
     cv::Mat disparity_sgbm, disparity;
     sgbm->compute(left, right, disparity_sgbm);
+
+    //A 转化为 CV_32F类型 存入 disparity 缩放 1/16
+    //还有第四个参数 beta可以+-运算
     disparity_sgbm.convertTo(disparity, CV_32F, 1.0 / 16.0f);
 
     // 生成点云
