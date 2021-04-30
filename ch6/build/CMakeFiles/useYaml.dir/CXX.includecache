@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xavier/Slambook2/ch6/useYaml.cpp
+iostream
+-
+fstream
+-
+string
+-
+yaml-cpp/yaml.h
+/home/xavier/Slambook2/ch6/yaml-cpp/yaml.h
+
