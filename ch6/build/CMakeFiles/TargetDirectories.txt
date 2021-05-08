@@ -1,5 +1,0 @@
-/home/xavier/Slambook2/ch6/build/CMakeFiles/rebuild_cache.dir
-/home/xavier/Slambook2/ch6/build/CMakeFiles/edit_cache.dir
-/home/xavier/Slambook2/ch6/build/CMakeFiles/testYaml.dir
-/home/xavier/Slambook2/ch6/build/CMakeFiles/useYaml.dir
-/home/xavier/Slambook2/ch6/build/CMakeFiles/gaussNewton.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11  -rdynamic CMakeFiles/useYaml.dir/useYaml.cpp.o  -o useYaml  /usr/local/lib/libyaml-cpp.a 
